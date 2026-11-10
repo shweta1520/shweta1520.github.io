@@ -1,0 +1,589 @@
+<title>Shweta Singh Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Layout concept: a payment settlement run. Hero profile as a query result, headline numbers, the pipeline where the four defects were fixed, then a timeline, project grid and ledger-style sections. */
+  :root {
+    --bg: #F2F5F9;
+    --surface: #FFFFFF;
+    --surface-2: #E9EEF6;
+    --fg: #0A1326;
+    --muted: #4A5A74;
+    --line: #D3DBE7;
+    --accent: #1F46E0;
+    --accent-ink: #FFFFFF;
+    --teal: #0B8A85;
+    --mark: #9A5B00;
+    --flag: #B4400F;
+    --glow: rgba(31, 70, 224, 0.16);
+    --display: 'Bricolage Grotesque', 'Space Grotesk', system-ui, sans-serif;
+    --body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #070D18;
+      --surface: #0E1728;
+      --surface-2: #14203A;
+      --fg: #E8EEF8;
+      --muted: #98A8C1;
+      --line: #213049;
+      --accent: #7F9DFF;
+      --accent-ink: #070D18;
+      --teal: #3CCBC0;
+      --mark: #F0B955;
+      --flag: #FF9A6B;
+      --glow: rgba(127, 157, 255, 0.18);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #070D18;
+    --surface: #0E1728;
+    --surface-2: #14203A;
+    --fg: #E8EEF8;
+    --muted: #98A8C1;
+    --line: #213049;
+    --accent: #7F9DFF;
+    --accent-ink: #070D18;
+    --teal: #3CCBC0;
+    --mark: #F0B955;
+    --flag: #FF9A6B;
+    --glow: rgba(127, 157, 255, 0.18);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: 76px; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body {
+    margin: 0;
+    padding-block: 0;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+  h1, h2, h3, p, dl, dd, ul { margin: 0; }
+  ul { padding: 0; list-style: none; }
+
+  /* header */
+  .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 24px; padding-block: 14px; background: var(--bg); border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 13px; }
+  .top strong { font-weight: 500; letter-spacing: 0.01em; }
+  .top .right { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; }
+  .top nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  .top nav a { color: var(--muted); text-decoration: none; }
+  .top nav a:hover { color: var(--accent); }
+  .theme { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 12px; cursor: pointer; }
+  .theme:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* hero */
+  .hero-band { position: relative; }
+  .hero-band::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 100%; max-height: 640px; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(60% 55% at 78% 8%, var(--glow), transparent 70%),
+      linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 56px 56px,
+      linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 56px 56px;
+    opacity: 0.55;
+    -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
+            mask-image: linear-gradient(to bottom, #000 40%, transparent);
+  }
+  .hero { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px 56px; align-items: center; padding-block: 64px 48px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 13px; color: var(--muted); border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 14px; }
+  .eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); display: inline-block; }
+  h1 { font-family: var(--display); font-weight: 800; font-size: clamp(3rem, 9vw, 6.4rem); line-height: 0.92; letter-spacing: -0.04em; text-wrap: balance; margin-block: 22px 24px; }
+  h1 span { color: var(--accent); }
+  .lead { font-size: clamp(1.1rem, 2.2vw, 1.3rem); line-height: 1.5; max-width: 36ch; }
+  .lead b { font-weight: 600; }
+  .links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 30px; font-size: 15px; }
+  .btn { display: inline-block; font: inherit; font-size: 14.5px; font-weight: 500; background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 4px; padding: 11px 20px; cursor: pointer; text-decoration: none; }
+  .btn:hover { filter: brightness(1.1); }
+  .btn.ghost { background: transparent; color: var(--fg); border: 1px solid var(--line); }
+  .btn.ghost:hover { border-color: var(--accent); color: var(--accent); filter: none; }
+
+  .result { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; font-family: var(--mono); font-size: 13.5px; min-width: 0; box-shadow: 0 24px 60px -28px var(--glow), 0 2px 0 var(--line); }
+  .result .bar { display: flex; align-items: center; gap: 7px; padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--surface-2); color: var(--muted); font-size: 12px; }
+  .result .bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--line); display: inline-block; }
+  .result .bar span { margin-left: 8px; }
+  .sql { padding: 16px 18px; border-bottom: 1px solid var(--line); line-height: 1.7; overflow-x: auto; white-space: pre; }
+  .k { color: var(--accent); font-weight: 500; }
+  .result dl { display: grid; grid-template-columns: minmax(7rem, 9rem) minmax(0, 1fr); }
+  .result dt, .result dd { padding: 11px 18px; border-bottom: 1px solid var(--line); }
+  .result dt { color: var(--muted); }
+  .result dd { font-family: var(--body); font-size: 14.5px; line-height: 1.45; overflow-wrap: anywhere; }
+  .result .foot { padding: 10px 18px; color: var(--muted); font-size: 12.5px; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+    .hero > div:first-child > * { animation: rise 0.7s cubic-bezier(.2,.7,.2,1) backwards; }
+    .hero > div:first-child > :nth-child(2) { animation-delay: 0.08s; }
+    .hero > div:first-child > :nth-child(3) { animation-delay: 0.16s; }
+    .hero > div:first-child > :nth-child(4) { animation-delay: 0.24s; }
+    .result { animation: rise 0.8s 0.2s cubic-bezier(.2,.7,.2,1) backwards; }
+  }
+
+  /* stats */
+  .stats { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: 8px; background: var(--surface); overflow: hidden; margin-bottom: 24px; }
+  .stat { padding: 24px 22px; border-left: 1px solid var(--line); min-width: 0; }
+  .stat:first-child { border-left: 0; }
+  .stat b { display: block; font-family: var(--display); font-weight: 700; font-size: clamp(2rem, 4.2vw, 3rem); line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .stat span { display: block; margin-top: 10px; font-size: 14px; color: var(--muted); line-height: 1.4; }
+
+  /* sections */
+  section { padding-block: 72px; }
+  .label { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.05em; color: var(--mark); }
+  h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.9rem, 4.4vw, 2.8rem); line-height: 1.05; letter-spacing: -0.03em; text-wrap: balance; margin-block: 10px 14px; max-width: 22ch; }
+  .intro { color: var(--muted); max-width: 60ch; font-size: 1.05rem; margin-bottom: 36px; }
+  h3 { font-family: var(--display); font-weight: 700; font-size: 1.3rem; line-height: 1.2; letter-spacing: -0.015em; text-wrap: balance; }
+
+  /* pipeline */
+  .pipe { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; position: relative; }
+  .stage { position: relative; padding: 0 14px 0 0; min-width: 0; }
+  .stage .node { position: relative; z-index: 1; width: 44px; height: 44px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); display: grid; place-items: center; font-family: var(--mono); font-size: 13px; color: var(--accent); }
+  .stage::after { content: ""; position: absolute; left: 56px; right: 8px; top: 21px; height: 2px; background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 16px); opacity: 0.6; }
+  .stage:last-child::after { display: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes flow { to { background-position: 16px 0; } }
+    .stage::after { animation: flow 0.9s linear infinite; }
+  }
+  .stage h3 { font-size: 1.05rem; margin-top: 16px; }
+  .stage .sub { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .flag { margin-top: 14px; border: 1px solid var(--flag); border-radius: 6px; padding: 10px 12px; font-size: 13.5px; line-height: 1.4; background: var(--surface); }
+  .flag small { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--flag); margin-bottom: 3px; }
+  .flag.empty { border-color: transparent; background: transparent; padding: 0; }
+  .pipe-note { margin-top: 28px; font-size: 14.5px; color: var(--muted); max-width: 66ch; }
+
+  /* timeline */
+  .timeline { display: grid; gap: 0; }
+  .role { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 8px 48px; padding-block: 32px; border-top: 1px solid var(--line); }
+  .role:last-child { border-bottom: 1px solid var(--line); }
+  .when { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  .when b { display: block; color: var(--fg); font-weight: 500; margin-bottom: 2px; }
+  .role h3 { font-size: 1.5rem; }
+  .role .org { margin-top: 4px; color: var(--muted); font-size: 15px; }
+  .badge { display: inline-block; margin-top: 12px; font-family: var(--mono); font-size: 12px; color: var(--teal); border: 1px solid var(--teal); border-radius: 999px; padding: 3px 12px; }
+  .role ul { margin-top: 18px; display: grid; gap: 10px; max-width: 72ch; }
+  .role li { padding-left: 20px; position: relative; font-size: 15.5px; }
+  .role li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 8px; height: 2px; background: var(--accent); }
+
+  /* project grid */
+  .bento { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
+  .tile { grid-column: span 2; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .tile.wide { grid-column: span 3; }
+  .tile.hot { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .tile.hot .tag, .tile.hot p { color: var(--accent-ink); opacity: 0.88; }
+  .tag { font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em; color: var(--muted); text-transform: uppercase; }
+  .tile p { font-size: 15.5px; color: var(--muted); }
+  .big { font-family: var(--display); font-weight: 700; font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -0.02em; line-height: 1.1; margin-top: auto; padding-top: 10px; }
+  .big small { font-size: 0.55em; font-weight: 500; opacity: 0.7; margin-inline: 6px; }
+
+  /* skills */
+  .skills { display: grid; grid-template-columns: 12rem minmax(0, 1fr); }
+  .skills dt, .skills dd { padding-block: 20px; border-top: 1px solid var(--line); }
+  .skills dt { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  .skills dd { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skills dt:last-of-type, .skills dt:last-of-type + dd { border-bottom: 1px solid var(--line); }
+  .chip { font-family: var(--mono); font-size: 13px; border: 1px solid var(--line); background: var(--surface); border-radius: 4px; padding: 4px 10px; }
+  .chip.core { border-color: var(--accent); color: var(--accent); }
+
+  /* data */
+  .data { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 20px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 26px; min-width: 0; }
+  .card p { font-size: 15.5px; color: var(--muted); margin-top: 8px; }
+  .bars { margin-top: 22px; display: grid; gap: 16px; }
+  .bar-row .name { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; }
+  .bar-row .name b { font-family: var(--mono); font-weight: 500; font-variant-numeric: tabular-nums; }
+  .track { height: 12px; background: var(--surface-2); border-radius: 3px; margin-top: 7px; overflow: hidden; }
+  .fill { height: 100%; background: var(--accent); border-radius: 3px; }
+  .fill.base { background: var(--muted); opacity: 0.6; }
+  .scale { display: flex; justify-content: space-between; margin-top: 2px; font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+  .duo div { border-top: 1px solid var(--line); padding-top: 12px; }
+  .duo b { display: block; font-family: var(--display); font-size: 2.2rem; font-weight: 700; line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .duo span { display: block; margin-top: 6px; font-size: 13.5px; color: var(--muted); }
+  .col { display: grid; gap: 20px; min-width: 0; align-content: start; }
+
+  /* education */
+  .edu { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+  .edu .card p { margin-top: 6px; }
+  .edu .when { margin-bottom: 8px; }
+
+  /* contact */
+  .contact-card { background: var(--fg); color: var(--bg); border-radius: 12px; padding: clamp(28px, 6vw, 64px); position: relative; overflow: hidden; }
+  .contact-card h2 { color: var(--bg); max-width: 18ch; margin-top: 0; }
+  .contact-card p { font-size: 1.1rem; max-width: 50ch; opacity: 0.8; }
+  .email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 28px; }
+  .email { font-family: var(--mono); font-size: clamp(1rem, 2.6vw, 1.3rem); user-select: all; overflow-wrap: anywhere; }
+  .contact-card .btn { background: var(--bg); color: var(--fg); }
+  #copy-note { font-family: var(--mono); font-size: 12.5px; opacity: 0.75; }
+  .contact-card .links a { color: var(--bg); }
+  footer { padding-block: 28px 44px; font-family: var(--mono); font-size: 12.5px; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+
+  /* responsive */
+  @media (max-width: 940px) {
+    .hero, .data { grid-template-columns: minmax(0, 1fr); }
+    .hero { padding-block: 40px 32px; }
+    .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .stat:nth-child(3) { border-left: 0; }
+    .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tile, .tile.wide { grid-column: span 1; }
+    .pipe { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .stage { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 0 18px; padding: 0 0 28px 0; }
+    .stage::after { left: 21px; right: auto; top: 50px; bottom: 6px; width: 2px; height: auto; background: repeating-linear-gradient(180deg, var(--accent) 0 8px, transparent 8px 16px); }
+    .stage .node { grid-row: span 3; }
+    .stage h3 { margin-top: 2px; }
+    @keyframes flowv { to { background-position: 0 16px; } }
+    .stage:last-child { padding-bottom: 0; }
+  }
+  @media (max-width: 940px) and (prefers-reduced-motion: no-preference) {
+    .stage::after { animation: flowv 0.9s linear infinite; }
+  }
+  @media (max-width: 680px) {
+    section { padding-block: 52px; }
+    .role, .skills { grid-template-columns: minmax(0, 1fr); }
+    .role { gap: 6px; padding-block: 26px; }
+    .skills dt { border-bottom: 0; padding-bottom: 0; }
+    .skills dd { border-top: 0; padding-top: 10px; }
+    .skills dt:last-of-type { border-bottom: 0; }
+    .skills dt:last-of-type + dd { border-bottom: 1px solid var(--line); }
+    .bento { grid-template-columns: minmax(0, 1fr); }
+    .top nav { display: none; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <strong>Shweta Singh</strong>
+    <div class="right">
+      <nav aria-label="Sections">
+        <a href="#pipeline">Pipeline</a>
+        <a href="#work">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#data">Python</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme" id="theme-btn" type="button" aria-label="Switch between light and dark theme">
+        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 1a5 5 0 0 1 0 10z" fill="currentColor"/></svg>
+        Theme
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-band">
+      <div class="hero">
+        <div>
+          <p class="eyebrow"><i></i> Database Developer · Kalyan, Maharashtra</p>
+          <h1>Shweta <span>Singh</span></h1>
+          <p class="lead">I write and fix the <b>SQL Server</b> code that settles card payments across RuPay, VISA, Mastercard, Amex and IATA.</p>
+          <div class="links">
+            <a href="#contact" class="btn">Get in touch</a>
+            <a href="#work" class="btn ghost">See experience</a>
+            <a href="https://www.linkedin.com/in/shwetasingh11" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/shweta1520" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+
+        <div class="result" role="group" aria-label="Profile summary shown as a query result">
+          <div class="bar"><i></i><i></i><i></i><span>shweta_profile.sql</span></div>
+          <div class="sql"><span class="k">SELECT</span> role, employer, platform, networks,
+       tsql_written, experience
+<span class="k">FROM</span>   shweta.profile;</div>
+          <dl>
+            <dt>role</dt><dd>Database Developer</dd>
+            <dt>employer</dt><dd>Hitachi Payment Services</dd>
+            <dt>platform</dt><dd>MARS / MARSAXIS payment processing</dd>
+            <dt>networks</dt><dd>RuPay, VISA, Mastercard, Amex, IATA</dd>
+            <dt>tsql_written</dt><dd>10,000+ lines</dd>
+            <dt>experience</dt><dd>1.5 years in production</dd>
+          </dl>
+          <div class="foot">(6 rows affected)</div>
+        </div>
+      </div>
+
+      <div class="stats" aria-label="Key numbers">
+        <div class="stat"><b>10,000+</b><span>lines of T-SQL written and maintained</span></div>
+        <div class="stat"><b>7+</b><span>production tables migrated with zero downtime</span></div>
+        <div class="stat"><b>4</b><span>critical data defects root-caused and fixed</span></div>
+        <div class="stat"><b>5</b><span>card networks: RuPay, VISA, Mastercard, Amex, IATA</span></div>
+      </div>
+    </div>
+
+    <section id="pipeline">
+      <p class="label">-- settlement pipeline</p>
+      <h2>Where the four critical defects were fixed</h2>
+      <p class="intro">Transaction files move through ingestion, classification, staging, settlement and outgoing files. I root-caused four defects in this flow during production support.</p>
+
+      <div class="pipe">
+        <div class="stage">
+          <div class="node">01</div>
+          <h3>Ingestion</h3>
+          <p class="sub">switch files in</p>
+          <div class="flag"><small>Fixed</small>Date-format conversion in file ingestion</div>
+        </div>
+        <div class="stage">
+          <div class="node">02</div>
+          <h3>Classification</h3>
+          <p class="sub">transaction types</p>
+          <div class="flag"><small>Fixed</small>Pre-Auth completions misclassified</div>
+        </div>
+        <div class="stage">
+          <div class="node">03</div>
+          <h3>Staging</h3>
+          <p class="sub">refunds and sales</p>
+          <div class="flag"><small>Fixed</small>Partial refunds staged twice</div>
+        </div>
+        <div class="stage">
+          <div class="node">04</div>
+          <h3>Settlement</h3>
+          <p class="sub">reconciliation</p>
+          <div class="flag empty"></div>
+        </div>
+        <div class="stage">
+          <div class="node">05</div>
+          <h3>Outgoing files</h3>
+          <p class="sub">to the networks</p>
+          <div class="flag"><small>Fixed</small>Arithmetic overflow in RuPay outgoing</div>
+        </div>
+      </div>
+      <p class="pipe-note">The fixes prevent data corruption and duplicate transaction records.</p>
+    </section>
+
+    <section id="work">
+      <p class="label">-- experience</p>
+      <h2>Settlement systems in production</h2>
+
+      <div class="timeline">
+        <article class="role">
+          <p class="when"><b>Apr 2026 – Present</b>MARS / MARSAXIS</p>
+          <div>
+            <h3>Database Developer</h3>
+            <p class="org">Hitachi Payment Services</p>
+            <ul>
+              <li>Provide production database support for settlement pipelines, and root-caused and fixed four critical defects that risked data corruption and duplicate transaction records.</li>
+              <li>Architected and delivered the IATA module for Axis Bank end to end: schema design, stored procedures and ETL-style switch file processing pipelines for high-volume transaction files.</li>
+              <li>Wrote and maintain 10,000+ lines of T-SQL across stored procedures powering transaction and settlement processing for RuPay, VISA, Mastercard and Amex.</li>
+              <li>Optimized legacy batch queries from minutes to seconds through index tuning, JOIN rewrites and cursor elimination, shortening batch processing windows.</li>
+              <li>Executed zero-downtime schema migrations across 7+ production tables to support new card network feature rollouts.</li>
+              <li>Implemented cross-network issuing bank name propagation into transaction records using BIN range lookups against card network reference data.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when"><b>May 2025 – Mar 2026</b>Deployed at Hitachi</p>
+          <div>
+            <h3>Software Developer</h3>
+            <p class="org">nStore Retech Pvt. Ltd., deployed at Hitachi Payment Services</p>
+            <span class="badge">Promoted from contract intern to permanent hire</span>
+            <ul>
+              <li>Built backend APIs and optimized SQL queries for Ops 360, an internal portal aggregating real-time ATM status data.</li>
+              <li>Designed backend data models tracking machine downtime metrics, improving field team response times.</li>
+              <li>Wrote and tuned stored procedures and database objects across multiple projects, and partnered with development teams on database design and deployments.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <p class="label">-- selected work</p>
+      <h2>What I built and improved</h2>
+      <p class="intro">Highlights from the MARS / MARSAXIS platform and the Ops 360 portal.</p>
+
+      <div class="bento">
+        <div class="tile wide hot">
+          <p class="tag">IATA · Axis Bank</p>
+          <h3>An IATA module, end to end</h3>
+          <p>Schema design, stored procedures and ETL-style switch file processing pipelines for high-volume transaction files, delivered for a Tier-1 bank client.</p>
+          <p class="big">Schema <small>→</small> procedures <small>→</small> pipelines</p>
+        </div>
+        <div class="tile wide">
+          <p class="tag">Performance</p>
+          <h3>Batch queries, minutes to seconds</h3>
+          <p>Rewrote legacy batch queries with index tuning, JOIN rewrites and cursor elimination, which shortened the batch processing windows.</p>
+          <p class="big" style="color:var(--accent)">minutes <small>→</small> seconds</p>
+        </div>
+        <div class="tile">
+          <p class="tag">Schema migrations</p>
+          <h3>Zero-downtime changes</h3>
+          <p>Migrated 7+ production tables without downtime for new card network feature rollouts.</p>
+        </div>
+        <div class="tile">
+          <p class="tag">BIN ranges</p>
+          <h3>Issuing bank names, every network</h3>
+          <p>Propagated issuing bank names into transaction records using BIN range lookups against card network reference data.</p>
+        </div>
+        <div class="tile">
+          <p class="tag">Ops 360</p>
+          <h3>Real-time ATM status portal</h3>
+          <p>Built backend APIs, optimized SQL queries and designed downtime data models that improved field team response times.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <p class="label">-- skills</p>
+      <h2>Tools and domain</h2>
+      <dl class="skills">
+        <dt>databases</dt>
+        <dd><span class="chip core">Microsoft SQL Server</span><span class="chip">MySQL</span></dd>
+        <dt>languages</dt>
+        <dd><span class="chip core">T-SQL</span><span class="chip core">SQL</span><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Scikit-learn</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span></dd>
+        <dt>database engineering</dt>
+        <dd><span class="chip">Stored procedures</span><span class="chip">Functions</span><span class="chip">Triggers</span><span class="chip">Views</span><span class="chip">Schema design</span><span class="chip">Data modelling</span><span class="chip">Schema migrations</span><span class="chip">Batch / file-based ETL</span><span class="chip">Validation and reconciliation</span><span class="chip">Production support</span></dd>
+        <dt>performance tuning</dt>
+        <dd><span class="chip">Query optimization</span><span class="chip">Execution plan analysis</span><span class="chip">Index design</span><span class="chip">JOIN optimization</span><span class="chip">Cursor elimination</span></dd>
+        <dt>tools and cloud</dt>
+        <dd><span class="chip">AWS</span><span class="chip">Google Cloud Storage</span><span class="chip">Git</span><span class="chip">Streamlit</span><span class="chip">Jupyter / Google Colab</span><span class="chip">Backend API development</span></dd>
+        <dt>domain</dt>
+        <dd><span class="chip">Payment switch processing</span><span class="chip">RuPay</span><span class="chip">VISA</span><span class="chip">Mastercard</span><span class="chip">Amex</span><span class="chip">IATA</span><span class="chip">BIN range management</span><span class="chip">Settlement and reconciliation</span></dd>
+      </dl>
+    </section>
+
+    <section id="data">
+      <p class="label">-- python and data</p>
+      <h2>Machine learning projects</h2>
+      <p class="intro">Built during the OIBSIP internship and as an end-to-end pipeline project.</p>
+
+      <div class="data">
+        <div class="card">
+          <p class="tag">OIBSIP internship</p>
+          <h3 style="margin-top:6px">Sales prediction</h3>
+          <p>A Random Forest tuned with GridSearchCV reached R² 0.98 on the test set and 0.98 under 5-fold cross-validation, against a Linear Regression baseline.</p>
+          <div class="bars" role="img" aria-label="R squared on the test set: Random Forest 0.98, Linear Regression baseline 0.90">
+            <div class="bar-row">
+              <div class="name"><span>Random Forest, tuned</span><b>0.98</b></div>
+              <div class="track"><div class="fill" style="width:98%"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="name"><span>Linear Regression baseline</span><b>0.90</b></div>
+              <div class="track"><div class="fill base" style="width:90%"></div></div>
+            </div>
+            <div class="scale"><span>R² on test set</span><span>0 → 1</span></div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <p class="tag">OIBSIP internship</p>
+            <h3 style="margin-top:6px">SMS spam classifier</h3>
+            <p>Naive Bayes with TF-IDF on 5,500+ messages.</p>
+            <div class="duo">
+              <div><b>97%</b><span>accuracy</span></div>
+              <div><b>100%</b><span>precision on the spam class</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <p class="tag">Python · Scikit-learn · GCS</p>
+            <h3 style="margin-top:6px">Disease outbreak prediction</h3>
+            <p>An end-to-end ML pipeline on historical health data, with trend dashboards.</p>
+          </div>
+          <div class="card">
+            <p class="tag">Also built</p>
+            <h3 style="margin-top:6px">Iris classification and used car prices</h3>
+            <p>KNN, Decision Tree and Random Forest classifiers, plus a regression model. <a href="https://github.com/shweta1520/OIBSIP" target="_blank" rel="noopener">See the code on GitHub</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <p class="label">-- education</p>
+      <h2>Degrees and certifications</h2>
+      <div class="edu">
+        <div class="card">
+          <p class="when">2026 · CGPA 9.27 / 10</p>
+          <h3>M.Sc. in Cloud Computing / Computer Science</h3>
+          <p>B. K. Birla College, Kalyan</p>
+        </div>
+        <div class="card">
+          <p class="when">2024 · CGPA 8.9 / 10</p>
+          <h3>B.Sc. in Computer Science and Technology</h3>
+          <p>Mumbai University</p>
+        </div>
+        <div class="card">
+          <p class="when">Certifications and languages</p>
+          <h3>Python Certification, AWS Cloud Assessment</h3>
+          <p>English, Hindi</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-card">
+        <p class="label" style="color:var(--bg);opacity:.7">-- contact</p>
+        <h2>Let's talk about your data</h2>
+        <p>Reach out about database development, payment systems or data work.</p>
+        <div class="email-row">
+          <span class="email" id="email-text">shwetasingh4320@gmail.com</span>
+          <button class="btn" id="copy-email" type="button">Copy email</button>
+          <span id="copy-note" role="status" aria-live="polite"></span>
+        </div>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/shwetasingh11" target="_blank" rel="noopener">linkedin.com/in/shwetasingh11</a>
+          <a href="https://github.com/shweta1520" target="_blank" rel="noopener">github.com/shweta1520</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Shweta Singh · Database Developer</span>
+    <span>Kalyan, Maharashtra</span>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    try {
+      var saved = localStorage.getItem('portfolio-theme');
+      if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
+    } catch (e) {}
+    document.getElementById('theme-btn').addEventListener('click', function () {
+      var cur = root.getAttribute('data-theme');
+      if (!cur) cur = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      var next = cur === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('portfolio-theme', next); } catch (e) {}
+    });
+
+    var btn = document.getElementById('copy-email');
+    var note = document.getElementById('copy-note');
+    var text = document.getElementById('email-text');
+    function selectText() {
+      try {
+        var r = document.createRange();
+        r.selectNodeContents(text);
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+      } catch (e) {}
+    }
+    btn.addEventListener('click', function () {
+      var value = text.textContent.trim();
+      var p;
+      try { p = navigator.clipboard.writeText(value); } catch (e) { p = Promise.reject(e); }
+      p.then(function () {
+        note.textContent = 'Copied';
+      }).catch(function () {
+        selectText();
+        note.textContent = 'Selected. Press copy.';
+      });
+      setTimeout(function () { note.textContent = ''; }, 3000);
+    });
+  })();
+</script>
